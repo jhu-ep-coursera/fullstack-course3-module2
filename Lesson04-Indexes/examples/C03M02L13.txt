@@ -1,0 +1,20 @@
+
+#(Slide 2)
+# List all indexes
+db[:zips].indexes.each do |index| p index
+
+________________________________________________________
+#(Slide 3)
+# create_one
+
+db[:zips].indexes.create_one({ :state => 1 })
+________________________________________________________
+#(Slide 4)
+# drop_one
+
+db[:zips].indexes.drop_one('state_1')
+________________________________________________________
+#(Slide 5)
+# drop_all	
+
+db[:zips].indexes.drop_all

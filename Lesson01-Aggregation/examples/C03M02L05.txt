@@ -1,0 +1,10 @@
+
+________________________________________________________
+#(Slide 3)
+# WITHOUT $match
+db[:zips].find().aggregate([{:$match=>{:city=>'ELMIRA'}}, {:$group=>{ :_id=>{:city=>'$city',:state=>'$state'}, :zips=>{:$addToSet=>'$_id'}}}]).each {|r| pp r} 
+
+________________________________________________________
+#(Slide 4)
+# $unwind
+db[:zips].find().aggregate([{:$match=>{:city=>'ELMIRA'}}, {:$group=>{ :_id=>{:city=>'$city',:state=>'$state'},:zips=>{:$addToSet=>'$_id'}}}, {:$unwind=>'$zips'}]).each {|r| pp r}

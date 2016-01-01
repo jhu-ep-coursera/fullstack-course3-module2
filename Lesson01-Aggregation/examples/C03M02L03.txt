@@ -1,0 +1,36 @@
+
+________________________________________________________
+#(Slide 4)
+# $sum
+db[:zips].find.aggregate([{ :$group=>{:_id=>'$state', :population=>{:$sum=>'$pop'}}},:$limit=>5]).each {|r| pp r}
+
+________________________________________________________
+#(Slide 5)
+# $avg
+db[:zips].find.aggregate([{ :$group=>{ :_id=>'$state', :ave_population=>{:$avg=>'$pop'}}},{:$limit=>5}]).each {|r| pp r}
+
+________________________________________________________
+#(Slide 6)
+# $max
+db[:zips].find().aggregate([{:$group=>{ :_id=>'$state', :max_zip=>{:$max=>'$pop'}}}, {:$limit=>5}]).each {|r| pp r}
+
+________________________________________________________
+#(Slide 7)
+# $min
+db[:zips].find().aggregate([{:$group=>{ :_id=>'$state', :min_zip=>{:$min=>'$pop'}}}, {:$limit=>5}]).each {|r| pp r}
+________________________________________________________
+#(Slide 7)
+# $push
+db[:zips].find().aggregate(
+  [{:$group=>{ :_id=>{:city=>'$city',  
+  :state=>'$state'},
+  :zips=>{:$push=>'$_id'}}},    
+  {:$limit=>15}]).each {|r| pp r}
+
+  ________________________________________________________
+#(Slide 8)
+# $addToSet
+
+db[:zips].find.aggregate([ {:$group=>{:_id=>0, :zips=>{:$push=>"$state"}}}]).first  
+
+db[:zips].find.aggregate([ {:$group=>{:_id=>0, :zips=>{:$addToSet=>"$state"}}}]).first

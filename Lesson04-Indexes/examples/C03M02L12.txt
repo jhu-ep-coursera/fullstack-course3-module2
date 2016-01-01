@@ -1,0 +1,17 @@
+
+#(Slide 5)
+# explain
+pp db[:zips].find(:state => 'MD').explain
+________________________________________________________
+#(Slide 7)
+# create_one
+
+db[:zips].indexes.create_one({ :state => 1 })
+
+________________________________________________________
+#(Slide 10)
+# create_many
+
+db[:zips].indexes.create_many([ { :key => { state: 1 } },
+   { :key => { city: 1 }}])
+])
