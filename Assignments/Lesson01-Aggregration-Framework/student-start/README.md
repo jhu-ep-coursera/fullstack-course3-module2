@@ -189,7 +189,7 @@ required by downstream aggregation functions and in the final result. You will p
     ```
 
     ```shell
-    $rspec spec/lecture2_spec.rb -rq01
+    $rspec spec/lecture2_spec.rb -e rq01
     ```
 
 2. Implement an instance method called `id_number_map` that
@@ -207,7 +207,7 @@ required by downstream aggregation functions and in the final result. You will p
     ```
 
     ```shell
-    $rspec spec/lecture2_spec.rb -rq02
+    $rspec spec/lecture2_spec.rb -e rq02
     ```
 
 3. Implement an instance method called `concat_names` that
@@ -226,7 +226,7 @@ required by downstream aggregation functions and in the final result. You will p
     ```
 
     ```shell
-    $rspec spec/lecture2_spec.rb -rq03
+    $rspec spec/lecture2_spec.rb -e rq03
     ```
 
 ### Lecture 3: `$group`
@@ -252,7 +252,7 @@ In this section we will get some practice applying group functions around a sele
     ```
 
     ```shell
-    $rspec spec/lecture3_spec.rb -rq01
+    $rspec spec/lecture3_spec.rb -e rq01
     ```
 
 2. Implement an instance method called `group_last_names` that
@@ -274,7 +274,7 @@ In this section we will get some practice applying group functions around a sele
     ```
 
     ```shell
-    $rspec spec/lecture3_spec.rb -rq02
+    $rspec spec/lecture3_spec.rb -e rq02
     ```
 
 3. Implement an instance method called `group_last_names_set` that repeats the previous query except
@@ -296,7 +296,7 @@ In this section we will get some practice applying group functions around a sele
     ```
 
     ```shell
-    $rspec spec/lecture3_spec.rb -rq03
+    $rspec spec/lecture3_spec.rb -e rq03
     ```
 
 ### Lecture 4: $match
@@ -420,4 +420,4 @@ There is no submission required for this assignment but the
 skills learned will be part of a follow-on assignment so 
 please complete this to the requirements of the unit test.
 
-## Last Updated: 2015-12-13
+## Last Updated: 2016-01-31
