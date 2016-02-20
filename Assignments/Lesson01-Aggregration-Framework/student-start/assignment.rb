@@ -72,7 +72,7 @@ class Solution
     #place solution here
   #
 
-  def race_group_results
+  def group_times
     #place solution here
   end
 
