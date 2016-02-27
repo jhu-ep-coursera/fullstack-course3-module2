@@ -380,8 +380,8 @@ In this section we will modify the database.
     * finds the racers having that same last name (Hint: `$match`)
     * determines the average of all their race times (Hint: `$group` and `$avg`)
     * forms an array of numbers for each member of the group (Hint: `$group` and `$push`)
-    * forms a result with a `time_to_beat` equal to `age_time` for each number (Hint: `$unwind`)
     This is where the difference starts.
+    * forms a result with `avg_time` for each number (Hint: `$unwind`)
     * forms a result with `last_name`, `number`, and `avg_time` for each number in the family 
     with no `_id` property (Hint: `$project`)
     * returns the Mongo result object for the command
