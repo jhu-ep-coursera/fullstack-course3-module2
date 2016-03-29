@@ -104,12 +104,12 @@ class Solution
   # Lecture 5: $unwind
   #
   def avg_family_time last_name
-    @coll.find.aggregate([ {:$match=>{:last_name=>"JONES"}}, 
+    @coll.find.aggregate([ {:$match=>{:last_name=>last_name}}, 
                            {:$group=>{:_id=>"$last_name", avg_time:{:$avg=>"$secs"}, numbers:{:$push=>"$number"}}}])
   end
   
   def number_goal last_name
-    @coll.find.aggregate([ {:$match=>{:last_name=>"JONES"}}, 
+    @coll.find.aggregate([ {:$match=>{:last_name=>last_name}}, 
                            {:$group=>{:_id=>"$last_name", avg_time:{:$avg=>"$secs"}, numbers:{:$push=>"$number"}}},
                            {:$unwind=>"$numbers"},
                            {:$project=>{_id:0, :number=>"$numbers", avg_time:1, last_name:"$_id"}}
