@@ -346,7 +346,7 @@ In this section we will limit documents in the query pipeline to those that matc
     for this age group did not satisfy the `criteria_time` specified.
 
     ```ruby
-    > r=s.age_groups_faster_than "masters",1280
+    > r=s.age_groups_faster_than("masters",1280).first
      => {"_id"=>{"age"=>"masters", "gender"=>"F"}, "runners"=>58, "fastest_time"=>1264}
     ```
     

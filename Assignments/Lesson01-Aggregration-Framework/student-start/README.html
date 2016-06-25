@@ -213,7 +213,7 @@ $ gem install mongo -v 2.1.2</code></pre></li>
 </ul>
 <p>Note that this can be implemented with two (2) <code>$match</code> functions. One prior to the <code>$group</code> function and one after.</p>
 <p>You can try out your new method using the irb shell. The gender=&quot;M&quot; for this age group did not satisfy the <code>criteria_time</code> specified.</p>
-<div class="sourceCode"><pre class="sourceCode ruby"><code class="sourceCode ruby">&gt; r=s.age_groups_faster_than <span class="st">&quot;masters&quot;</span>,<span class="dv">1280</span>
+<div class="sourceCode"><pre class="sourceCode ruby"><code class="sourceCode ruby">&gt; r=s.age_groups_faster_than(<span class="st">&quot;masters&quot;</span>,<span class="dv">1280</span>).first
  =&gt; {<span class="st">&quot;_id&quot;</span>=&gt;{<span class="st">&quot;age&quot;</span>=&gt;<span class="st">&quot;masters&quot;</span>, <span class="st">&quot;gender&quot;</span>=&gt;<span class="st">&quot;F&quot;</span>}, <span class="st">&quot;runners&quot;</span>=&gt;<span class="dv">58</span>, <span class="st">&quot;fastest_time&quot;</span>=&gt;<span class="dv">1264</span>}</code></pre></div>
 <pre class="shell"><code>$rspec spec/lecture4_spec.rb -e rq02</code></pre></li>
 </ol>
