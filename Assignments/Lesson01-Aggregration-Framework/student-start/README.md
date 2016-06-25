@@ -76,7 +76,7 @@ and assign that collection to the variable called `racers` (used in follow-on st
 
     ```ruby
     $ irb
-    > require './assignment.rb`
+    > require './assignment.rb'
     > racers=Solution.collection
      => #<Mongo::Collection:0x22344800 namespace=test.race1>
     ```
