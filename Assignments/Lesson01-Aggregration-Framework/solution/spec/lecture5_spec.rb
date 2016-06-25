@@ -65,7 +65,7 @@ describe Solution do
         expect(r[:avg_time]).to eq raw_avg
         expect(r[:numbers]).to_not be_nil
         expect(r[:numbers].count).to eq raw_array.count
-        expect(r[:numbers]).to eq raw_array
+        expect(r[:numbers].sort).to eq raw_array.sort
       end
     end
   end
